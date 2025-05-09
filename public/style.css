@@ -1,0 +1,140 @@
+/* Importa o Bootstrap, uma biblioteca CSS que já deixa os botões e layout mais bonitinhos */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css");
+
+/* Defino uma paleta de cores suaves pra deixar tudo com uma vibe calma e clean */
+:root {
+  --main-color: #A3D5D3;      /* Verde água principal, que dá a carinha do site */
+  --accent-color: #ffffff;    /* Branco puro, usado pra contrastar com o verde */
+  --hover-color: #87cfc9;     /* Verde um pouco mais forte, usado no hover dos botões */
+  --bg-color: #f0f8f7;        /* Fundo quase branco com um toque de verde, bem leve */
+  --card-color: #ffffff;      /* Cor dos cards/caixinhas que ficam em cima do fundo */
+  --border-color: #cbe4e2;    /* Borda discreta, pra separar sem pesar */
+  --text-color: #334E4A;      /* Cor do texto, um verdinho escuro agradável de ler */
+  --delete-btn-color: #f5a3a3; /* Rosa clarinho usado só nos botões de deletar */
+}
+
+/* Aplico uma fonte bonita e deixo o fundo com a cor suave que escolhi */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  margin: 0;
+  padding: 0;
+  color: var(--text-color); /* Deixa o texto todo dessa cor padrão */
+}
+
+/* Estilo do container principal que segura tudo, tipo a caixinha do formulário */
+.container {
+  max-width: 540px;
+  margin: 60px auto; /* Centraliza no meio da tela */
+  background-color: var(--card-color); /* Branquinho */
+  padding: 30px;
+  border-radius: 12px; /* Arredonda as bordas */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra leve, pra destacar */
+}
+
+/* Títulos com alinhamento central */
+h1, h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Subtítulo com uma cor de destaque */
+h2 {
+  font-size: 28px;
+  color: var(--main-color);
+}
+
+/* Estilo padrão pra todos os botões */
+button {
+  padding: 8px;
+  margin: 8px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 500;
+}
+
+/* Estilo especial pro botão de "submit" (enviar) */
+button[type="submit"] {
+  background-color: var(--main-color); /* Verde água */
+  color: var(--accent-color); /* Letras brancas */
+  transition: all 0.3s ease;
+}
+
+/* Quando passo o mouse no botão, ele cresce um pouquinho */
+button[type="submit"]:hover {
+  background-color: var(--hover-color);
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* Estilo dos campos de input (nome do usuário, por exemplo) */
+input {
+  padding: 10px;
+  width: 100%;
+  max-width: 320px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  outline: none;
+  background-color: #f9fdfd; /* Branco quase esverdeado */
+}
+
+/* Deixo as divs mais alinhadas no centro e espaçadas */
+.text-center,
+.mb-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Mensagem de erro ou sucesso aparece nesse estilo */
+#mensagem {
+  display: none;
+  font-weight: bold;
+  margin-top: 12px;
+  color: var(--main-color);
+  text-align: center;
+}
+
+/* Estilo da lista de usuários */
+.list-group {
+  margin-top: 20px;
+  padding: 0;
+}
+
+/* Cada item da lista (usuário) com aparência bonitinha */
+.list-group-item {
+  background-color: #e2f2f1; /* Verde bem clarinho */
+  color: #334E4A;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  list-style: none;
+}
+
+/* Botões de editar/deletar dentro da lista */
+.list-group-div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Estilo dos botões dentro da lista (ícones de lápis e lixeira) */
+.list-group-div button {
+  background-color: var(--delete-btn-color); /* Rosa pastel */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  width: 40px;
+  height: 30px;
+  transition: transform 0.2s ease;
+}
+
+/* Efeito ao passar o mouse nesses botões */
+.list-group-div button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
